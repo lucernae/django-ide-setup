@@ -1,0 +1,8 @@
+
+<body>
+{% if user.is_authenticated %}
+    Welcome {{ user }} in {{ SITENAME }}
+{% else %}
+    Welcome in {{ SITENAME }} lalala
+{% endif %}
+</body>

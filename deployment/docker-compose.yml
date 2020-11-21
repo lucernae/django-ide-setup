@@ -1,0 +1,24 @@
+version: '3'
+services:
+  django:
+    image: custom_image:latest
+    build:
+      context: ../
+      dockerfile: deployment/docker/Dockerfile
+    working_dir: /home/web/django_project
+    command: uwsgi --ini /home/web/django_project/uwsgi.ini
+    environment:
+      DJANGO_SETTINGS_MODULE: mysite.settings
+      DEBUG: ${DEBUG:-False}
+      SITENAME: ${SITENAME}
+    volumes:
+    - ../django_project:/home/web/django_project
+    ports:
+    - "8080:8080"
+
+  nginx:
+    image: nginx
+    volumes:
+    - ./sites-enabled:/etc/nginx/conf.d
+    ports:
+    - "80:80"
