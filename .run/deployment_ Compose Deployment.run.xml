@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="deployment: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker Machine Local">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="secondarySourceFiles">
+          <list>
+            <option value="deployment/docker-compose.override.yml" />
+          </list>
+        </option>
+        <option name="sourceFilePath" value="deployment/docker-compose.yml" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
