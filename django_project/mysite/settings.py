@@ -30,7 +30,7 @@ DEBUG = ast.literal_eval(os.getenv('DEBUG', 'True'))
 
 SITENAME = os.getenv('SITENAME', 'localhost')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', SITENAME]
+ALLOWED_HOSTS = ['127.0.0.1', 'django', 'localhost', SITENAME]
 
 
 # Application definition

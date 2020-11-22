@@ -1,7 +1,5 @@
 FROM python:3.8
 
-RUN apt -y update; apt -y install uwsgi
-
 COPY django_project/ /home/web/django_project
 
 WORKDIR /home/web/django_project
