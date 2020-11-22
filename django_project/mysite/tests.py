@@ -1,7 +1,6 @@
 import os
 
 from django import test
-from django.conf import settings
 
 
 class TestSettings(test.TestCase):
