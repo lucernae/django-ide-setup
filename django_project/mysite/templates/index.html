@@ -1,8 +1,8 @@
 
 <body>
 {% if user.is_authenticated %}
-    Welcome {{ user }} in {{ SITENAME }}
+    Welcome <b>{{ user }}</b> in <b>{{ SITENAME }}</b>
 {% else %}
-    Welcome in {{ SITENAME }} lalala
+    Welcome in <b>{{ SITENAME }}</b>
 {% endif %}
 </body>

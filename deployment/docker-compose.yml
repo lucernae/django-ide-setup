@@ -1,4 +1,7 @@
 version: '3'
+volumes:
+  static-data:
+  media-data:
 services:
   django:
     image: custom_image:latest
@@ -12,14 +15,18 @@ services:
       DEBUG: ${DEBUG:-False}
       SITENAME: ${SITENAME:-localhost}
     volumes:
-    - ../django_project:/home/web/django_project
+    - static-data:/home/web/static
+    - media-data:/home/web/media
     ports:
     - "8080:8080"
 
   nginx:
-    image: nginx
+    image: custom_nginx
+    build:
+      context: nginx
     volumes:
-    - ./sites-enabled:/etc/nginx/conf.d
+    - static-data:/home/web/static
+    - media-data:/home/web/media
     ports:
     - "${HTTP_PORT:-80}:80"
     links:
